@@ -4,10 +4,11 @@ import Navbar from "./../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 
 
+
 const Root = () => {
   return (
     <div>
-      <div className="max-w-6xl  md:mx-auto mx-6">
+      <div className="">
         <Navbar></Navbar>
         <Outlet></Outlet>
       </div>

@@ -4,6 +4,10 @@ import Root from "../../layout/Root";
 import Home from "../../pages/home/Home";
 import Login from "../../pages/login/Login";
 import Register from "../../pages/register/Register";
+import ArtsAndCrafts from "../../pages/arts-crafts/ArtsAndCrafts";
+import MyArtCraft from "../../pages/MyArt-Craft/MyArtCraft";
+import AddCraft from "../../pages/add-craft/AddCraft";
+
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +26,18 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/arts-crafts",
+        element: <ArtsAndCrafts></ArtsAndCrafts>
+      },
+      {
+        path: "/my-arts-crafts",
+        element: <MyArtCraft></MyArtCraft>
+      },
+      {
+        path: "/add-craft",
+        element: <AddCraft></AddCraft>
       },
     ],
   },
