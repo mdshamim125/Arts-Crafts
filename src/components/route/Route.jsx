@@ -7,6 +7,7 @@ import Register from "../../pages/register/Register";
 import ArtsAndCrafts from "../../pages/arts-crafts/ArtsAndCrafts";
 import MyArtCraft from "../../pages/MyArt-Craft/MyArtCraft";
 import AddCraftItem from "../../pages/add-craft/AddCraftItem";
+import CraftItemDetails from "../CraftItemDetails";
 
 
 
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
       {
         path: "/arts-crafts",
         element: <ArtsAndCrafts></ArtsAndCrafts>
+      },
+      {
+        path: "/craft/:id",
+        element: <CraftItemDetails></CraftItemDetails>
       },
       {
         path: "/my-arts-crafts",

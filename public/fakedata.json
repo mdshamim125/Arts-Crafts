@@ -1,0 +1,68 @@
+[
+  {
+    "image": "https://ibb.co/cwxJTqy",
+    "item_name": "Mountain View Canvas",
+    "subcategory_Name": "Landscape Painting",
+    "short_description": "Beautiful mountain scenery captured on canvas.",
+    "price": 50.0,
+    "rating": 4.5,
+    "customization": "Yes",
+    "processing_time": 3,
+    "stockStatus": "In stock"
+  },
+  {
+    "image": "https://ibb.co/DkPktcX",
+    "item_name": "Pencil Sketch Portrait",
+    "subcategory_Name": "Portrait Drawing",
+    "short_description": "Detailed pencil sketch portrait of a person.",
+    "price": 75.0,
+    "rating": 4.8,
+    "customization": "Yes",
+    "processing_time": 5,
+    "stockStatus": "Made to Order"
+  },
+  {
+    "image": "https://ibb.co/7W07b5R",
+    "item_name": "Floral Watercolor Art",
+    "subcategory_Name": "Watercolor Painting",
+    "short_description": "Vibrant floral arrangement painted with watercolours.",
+    "price": 60.0,
+    "rating": 4.7,
+    "customization": "Yes",
+    "processing_time": 2,
+    "stockStatus": "In stock"
+  },
+  {
+    "image": "https://ibb.co/yPzmXD5",
+    "item_name": "Realistic Oil Portrait",
+    "subcategory_Name": "Oil Painting",
+    "short_description": "Lifelike portrait painted with oil colors.",
+    "price": 100.0,
+    "rating": 4.9,
+    "customization": "Yes",
+    "processing_time": 7,
+    "stockStatus": "In stock"
+  },
+  {
+    "image": "https://ibb.co/YTNw3sg",
+    "item_name": "Figure Charcoal Sketch",
+    "subcategory_Name": "Charcoal Sketching",
+    "short_description": "Dynamic figure sketch created with charcoal.",
+    "price": 40.0,
+    "rating": 4.6,
+    "customization": "No",
+    "processing_time": 1,
+    "stockStatus": "In stock"
+  },
+  {
+    "image": "https://ibb.co/ckjfXNS",
+    "item_name": "Comic Strip Drawing",
+    "subcategory_Name": "Cartoon Drawing",
+    "short_description": "Playful comic strip illustration.",
+    "price": 35.0,
+    "rating": 4.4,
+    "customization": "No",
+    "processing_time": 2,
+    "stockStatus": "Made to Order"
+  }
+]
