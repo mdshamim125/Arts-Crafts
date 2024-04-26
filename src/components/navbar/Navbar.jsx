@@ -31,8 +31,8 @@ const Navbar = () => {
       )}
       {user && (
         <li>
-          <NavLink className="mr-3" to="/add-craft">
-            Add Craft
+          <NavLink className="mr-3" to="/add-craft-item">
+            Add Craft Item
           </NavLink>
         </li>
       )}
