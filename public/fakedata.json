@@ -1,6 +1,6 @@
 [
   {
-    "image": "https://ibb.co/cwxJTqy",
+    "image": "https://i.ibb.co/3vk1hKT/pexels-hamad-bajwa-249513-755858.jpg",
     "item_name": "Mountain View Canvas",
     "subcategory_Name": "Landscape Painting",
     "short_description": "Beautiful mountain scenery captured on canvas.",
@@ -11,7 +11,7 @@
     "stockStatus": "In stock"
   },
   {
-    "image": "https://ibb.co/DkPktcX",
+    "image": "https://i.ibb.co/q9L9dqG/pexels-cottonbro-3779014.jpg",
     "item_name": "Pencil Sketch Portrait",
     "subcategory_Name": "Portrait Drawing",
     "short_description": "Detailed pencil sketch portrait of a person.",
@@ -22,7 +22,7 @@
     "stockStatus": "Made to Order"
   },
   {
-    "image": "https://ibb.co/7W07b5R",
+    "image": "https://i.ibb.co/k8PYMf9/pexels-pixabay-164455.jpg",
     "item_name": "Floral Watercolor Art",
     "subcategory_Name": "Watercolor Painting",
     "short_description": "Vibrant floral arrangement painted with watercolours.",
@@ -33,7 +33,7 @@
     "stockStatus": "In stock"
   },
   {
-    "image": "https://ibb.co/yPzmXD5",
+    "image": "https://i.ibb.co/kBLVxp0/pexels-steve-1509534.jpg",
     "item_name": "Realistic Oil Portrait",
     "subcategory_Name": "Oil Painting",
     "short_description": "Lifelike portrait painted with oil colors.",
@@ -44,7 +44,7 @@
     "stockStatus": "In stock"
   },
   {
-    "image": "https://ibb.co/YTNw3sg",
+    "image": "https://i.ibb.co/n8wtbJp/pexels-hiep-nguyen-533903272-18703293.jpg",
     "item_name": "Figure Charcoal Sketch",
     "subcategory_Name": "Charcoal Sketching",
     "short_description": "Dynamic figure sketch created with charcoal.",
@@ -55,10 +55,10 @@
     "stockStatus": "In stock"
   },
   {
-    "image": "https://ibb.co/ckjfXNS",
+    "image": "https://i.ibb.co/vVSyvJ6/pexels-markusspiske-2990604.jpg",
     "item_name": "Comic Strip Drawing",
-    "subcategory_Name": "Cartoon Drawing",
-    "short_description": "Playful comic strip illustration.",
+    "subcategory_Name": "",
+    "short_description": "Cartoon DrawingPlayful comic strip illustration.",
     "price": 35.0,
     "rating": 4.4,
     "customization": "No",

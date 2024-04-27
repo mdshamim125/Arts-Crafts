@@ -8,8 +8,7 @@ import ArtsAndCrafts from "../../pages/arts-crafts/ArtsAndCrafts";
 import MyArtCraft from "../../pages/MyArt-Craft/MyArtCraft";
 import AddCraftItem from "../../pages/add-craft/AddCraftItem";
 import CraftItemDetails from "../CraftItemDetails";
-
-
+import CraftItemUpdate from "../CraftItemUpdate/CraftItemUpdate";
 
 export const router = createBrowserRouter([
   {
@@ -23,27 +22,31 @@ export const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "/register",
-        element: <Register></Register>
+        element: <Register></Register>,
       },
       {
         path: "/arts-crafts",
-        element: <ArtsAndCrafts></ArtsAndCrafts>
+        element: <ArtsAndCrafts></ArtsAndCrafts>,
       },
       {
         path: "/craft/:id",
-        element: <CraftItemDetails></CraftItemDetails>
+        element: <CraftItemDetails></CraftItemDetails>,
       },
       {
         path: "/my-arts-crafts",
-        element: <MyArtCraft></MyArtCraft>
+        element: <MyArtCraft></MyArtCraft>,
       },
       {
         path: "/add-craft-item",
-        element: <AddCraftItem></AddCraftItem>
+        element: <AddCraftItem></AddCraftItem>,
+      },
+      {
+        path: "/update/:id",
+        element: <CraftItemUpdate></CraftItemUpdate>
       },
     ],
   },

@@ -1,7 +1,10 @@
 import React from "react";
 import Swal from "sweetalert2";
+import useAuth from "../../hooks/Hooks";
 
 const AddCraftItem = () => {
+  const { user } = useAuth();
+  // console.log(user.email, user.displayName);
   const handleAddCraftItem = (event) => {
     event.preventDefault();
 
@@ -35,43 +38,46 @@ const AddCraftItem = () => {
 
     console.log(newItem);
 
-    // Send data to the server
-    // fetch('API_ENDPOINT_HERE', {
-    //     method: 'POST',
-    //     headers: {
-    //         'content-type': 'application/json'
-    //     },
-    //     body: JSON.stringify(newItem)
-    // })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log(data);
-    //         if (data.success) {
-    //             Swal.fire({
-    //                 title: 'Success!',
-    //                 text: 'Craft Item Added Successfully',
-    //                 icon: 'success',
-    //                 confirmButtonText: 'Cool'
-    //             });
-    //         } else {
-    //             Swal.fire({
-    //                 title: 'Error!',
-    //                 text: 'An error occurred while adding the craft item',
-    //                 icon: 'error',
-    //                 confirmButtonText: 'OK'
-    //             });
-    //         }
-    //     })
-    //     .catch(error => {
-    //         console.error('Error:', error);
-    //         Swal.fire({
-    //             title: 'Error!',
-    //             text: 'An error occurred while adding the craft item',
-    //             icon: 'error',
-    //             confirmButtonText: 'OK'
-    //         });
-    //     });
+    fetch("http://localhost:5000/craft", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newItem),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Craft Item Added Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        } else {
+          Swal.fire({
+            title: "Error!",
+            text: "An error occurred while adding the craft item",
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        Swal.fire({
+          title: "Error!",
+          text: "An error occurred while adding the craft item",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+      });
   };
+
+  if (!user) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="bg-[#F4F3F0] p-24">
@@ -87,7 +93,7 @@ const AddCraftItem = () => {
                 type="text"
                 name="image"
                 placeholder="Image URL"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full" required
               />
             </label>
           </div>
@@ -102,7 +108,7 @@ const AddCraftItem = () => {
                 type="text"
                 name="itemName"
                 placeholder="Item Name"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full" required
               />
             </label>
           </div>
@@ -115,7 +121,7 @@ const AddCraftItem = () => {
                 type="text"
                 name="subcategoryName"
                 placeholder="Subcategory Name"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full" required
               />
             </label>
           </div>
@@ -129,7 +135,7 @@ const AddCraftItem = () => {
               <textarea
                 name="shortDescription"
                 placeholder="Short Description"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full" required
                 rows="4"
               ></textarea>
             </label>
@@ -143,7 +149,7 @@ const AddCraftItem = () => {
                 type="number"
                 name="price"
                 placeholder="Price"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full" required
               />
             </label>
           </div>
@@ -158,7 +164,7 @@ const AddCraftItem = () => {
                 type="number"
                 name="rating"
                 placeholder="Rating"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full" required
               />
             </label>
           </div>
@@ -169,7 +175,7 @@ const AddCraftItem = () => {
             <label className="input-group">
               <select
                 name="customization"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full" required
               >
                 <option value="">Select Customization</option>
                 <option value="Yes">Yes</option>
@@ -188,7 +194,7 @@ const AddCraftItem = () => {
                 type="text"
                 name="processingTime"
                 placeholder="Processing Time"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full" required
               />
             </label>
           </div>
@@ -218,7 +224,8 @@ const AddCraftItem = () => {
                 type="text"
                 name="userName"
                 placeholder="User Name"
-                className="input input-bordered w-full"
+                defaultValue={user.displayName}
+                className="input input-bordered w-full" required
               />
             </label>
           </div>
@@ -231,7 +238,8 @@ const AddCraftItem = () => {
                 type="email"
                 name="userEmail"
                 placeholder="User Email"
-                className="input input-bordered w-full"
+                defaultValue={user.email}
+                className="input input-bordered w-full" required
               />
             </label>
           </div>

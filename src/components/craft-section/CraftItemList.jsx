@@ -26,14 +26,14 @@ const CraftItemList = () => {
           >
             <img
               src={item.image}
-              alt={item.item_name}
+              alt={item.itemName}
               className="w-full h-48 object-cover object-center"
             />
             <div className="p-2 rounded-sm border">
               <h3 className="text-xl font-semibold mb-2">
-                {item.subcategory_Name}
+                {item.subcategoryName}
               </h3>
-              <p className="text-gray-600">{item.short_description}</p>
+              <p className="text-gray-600">{item.shortDescription}</p>
               <div className="mt-4 flex justify-between items-center">
                 <p className="text-gray-500">price: $ {item.price}</p>
                 <p className="text-gray-500">rating: {item.rating}</p>

@@ -27,13 +27,13 @@ const CraftItemDetails = () => {
           <div className="lg:w-3/4">
             <img
               src={craftItem.image}
-              alt={craftItem.item_name}
+              alt={craftItem.itemName}
               className="w-full h-auto"
             />
           </div>
           <div>
-            <h2 className="text-3xl font-bold mb-4">{craftItem.item_name}</h2>
-            <p className="text-gray-600 mb-4">{craftItem.short_description}</p>
+            <h2 className="text-3xl font-bold mb-4">{craftItem.itemName}</h2>
+            <p className="text-gray-600 mb-4">{craftItem.shortDescription}</p>
             <div className="mb-4">
               <span className="font-semibold">Price:</span>{" "}
               <span>{craftItem.price}</span>
@@ -48,7 +48,7 @@ const CraftItemDetails = () => {
             </div>
             <div className="mb-4">
               <span className="font-semibold">Processing Time:</span>{" "}
-              <span>{craftItem.processing_time}</span>
+              <span>{craftItem.processingTime}</span>
             </div>
             <div className="mb-4">
               <span className="font-semibold">Stock Status:</span>{" "}
