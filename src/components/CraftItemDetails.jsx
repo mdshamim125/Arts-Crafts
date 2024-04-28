@@ -16,6 +16,17 @@ const CraftItemDetails = () => {
       });
   }, [id]);
 
+  useEffect(() => {
+    fetch(`http://localhost:5000/craft/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCraftItem(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching craft item details:", error);
+      });
+  }, [id]);
+
   if (!craftItem) {
     return <div>Loading...</div>;
   }

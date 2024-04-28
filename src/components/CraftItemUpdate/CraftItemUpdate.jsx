@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Swal from "sweetalert2";
-import useAuth from "../../hooks/Hooks";
 
-const CraftItemUpdate = ({item}) => {
-    console.log(item);
+import useAuth from "../../hooks/Hooks";
+import Swal from "sweetalert2";
+
+const CraftItemUpdate = ({ item }) => {
   const { user } = useAuth();
   const { id } = useParams();
-  const [craftItem, setCraftItem] = useState({
-    image: "",
-    itemName: "",
-    subcategoryName: "",
-    shortDescription: "",
-    price: "",
-    rating: "",
-    customization: "",
-    processingTime: "",
-    stockStatus: "",
-  });
+  const [craft, setCraft] = useState();
+
+  useEffect(() => {
+    if (!user) return;
+
+    fetch(`http://localhost:5000/craft/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setCraft(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching craft items:", error);
+      });
+  }, [user, id]);
 
   useEffect(() => {
     if (!user) return;
@@ -26,7 +30,6 @@ const CraftItemUpdate = ({item}) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setCraftItem(data);
       })
       .catch((error) => {
         console.error("Error fetching craft item:", error);
@@ -62,7 +65,7 @@ const CraftItemUpdate = ({item}) => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        if (data.updatedCount > 0) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
             text: "Craft Item Updated Successfully",
@@ -89,7 +92,7 @@ const CraftItemUpdate = ({item}) => {
       });
   };
 
-  if (!user) {
+  if (!user || !craft) {
     return <div>Loading...</div>;
   }
 
@@ -108,7 +111,7 @@ const CraftItemUpdate = ({item}) => {
                 name="image"
                 placeholder="Image URL"
                 className="input input-bordered w-full"
-                defaultValue={craftItem.image}
+                defaultValue={craft.image}
                 required
               />
             </label>
@@ -125,7 +128,7 @@ const CraftItemUpdate = ({item}) => {
                 name="itemName"
                 placeholder="Item Name"
                 className="input input-bordered w-full"
-                defaultValue={craftItem.itemName}
+                defaultValue={craft.itemName}
                 required
               />
             </label>
@@ -140,7 +143,7 @@ const CraftItemUpdate = ({item}) => {
                 name="subcategoryName"
                 placeholder="Subcategory Name"
                 className="input input-bordered w-full"
-                defaultValue={craftItem.subcategoryName}
+                defaultValue={craft.subcategoryName}
                 required
               />
             </label>
@@ -156,7 +159,7 @@ const CraftItemUpdate = ({item}) => {
                 name="shortDescription"
                 placeholder="Short Description"
                 className="input input-bordered w-full"
-                defaultValue={craftItem.shortDescription}
+                defaultValue={craft.shortDescription}
                 required
                 rows="4"
               ></textarea>
@@ -172,7 +175,7 @@ const CraftItemUpdate = ({item}) => {
                 name="price"
                 placeholder="Price"
                 className="input input-bordered w-full"
-                defaultValue={craftItem.price}
+                defaultValue={craft.price}
                 required
               />
             </label>
@@ -189,7 +192,7 @@ const CraftItemUpdate = ({item}) => {
                 name="rating"
                 placeholder="Rating"
                 className="input input-bordered w-full"
-                defaultValue={craftItem.rating}
+                defaultValue={craft.rating}
                 required
               />
             </label>
@@ -202,7 +205,7 @@ const CraftItemUpdate = ({item}) => {
               <select
                 name="customization"
                 className="input input-bordered w-full"
-                defaultValue={craftItem.customization}
+                defaultValue={craft.customization}
                 required
               >
                 <option value="">Select Customization</option>
@@ -223,7 +226,7 @@ const CraftItemUpdate = ({item}) => {
                 name="processingTime"
                 placeholder="Processing Time"
                 className="input input-bordered w-full"
-                defaultValue={craftItem.processingTime}
+                defaultValue={craft.processingTime}
                 required
               />
             </label>
@@ -236,7 +239,7 @@ const CraftItemUpdate = ({item}) => {
               <select
                 name="stockStatus"
                 className="input input-bordered w-full"
-                defaultValue={craftItem.stockStatus}
+                defaultValue={craft.stockStatus}
               >
                 <option value="">Select Stock Status</option>
                 <option value="In stock">In stock</option>
