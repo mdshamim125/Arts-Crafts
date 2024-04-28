@@ -6,9 +6,10 @@ import Swal from "sweetalert2";
 const MyCraftItem = () => {
   const { user } = useAuth();
   const [craftItems, setCraftItems] = useState([]);
+  const [filterCustomization, setFilterCustomization] = useState("All");
 
   useEffect(() => {
-    if (!user) return; // Ensure user is available before fetching data
+    if (!user) return;
 
     fetch(`http://localhost:5000/myCraft/${user?.email}`)
       .then((res) => res.json())
@@ -49,17 +50,39 @@ const MyCraftItem = () => {
     });
   };
 
+  const handleFilterChange = (e) => {
+    setFilterCustomization(e.target.value);
+  };
+
   if (!user) {
     return <div>Loading...</div>;
   }
 
+  let filteredItems = craftItems;
+  if (filterCustomization !== "All") {
+    filteredItems = craftItems.filter(
+      (item) => item.customization === filterCustomization
+    );
+  }
+
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold mb-4 mt-6 text-center">
-        My Arts And Craft
+      <h2 className="text-3xl font-bold my-6 text-center">
+        My Arts And Crafts
       </h2>
+      <div className="mb-6 flex justify-center">
+        <select
+          value={filterCustomization}
+          onChange={handleFilterChange}
+          className="px-3 py-2 border rounded-md"
+        >
+          <option value="All">All</option>
+          <option value="Yes">Customization Yes</option>
+          <option value="No">Customization No</option>
+        </select>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-        {craftItems.map((item) => (
+        {filteredItems.map((item) => (
           <div
             key={item._id}
             className="bg-white shadow-md rounded-lg overflow-hidden"
