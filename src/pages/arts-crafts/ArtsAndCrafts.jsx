@@ -17,7 +17,7 @@ const ArtsAndCrafts = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold mb-4 text-center">All Arts & Craft</h2>
+      <h2 className="text-3xl font-bold mb-4 text-center">All Arts & Crafts</h2>
       <div className="overflow-x-auto">
         <table className="table">
           <thead>

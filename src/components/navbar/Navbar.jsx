@@ -19,7 +19,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink className="mr-3" to="/arts-crafts">
-          Arts & Crafts
+         All Arts & Crafts
         </NavLink>
       </li>
       {user && (
@@ -32,7 +32,7 @@ const Navbar = () => {
       {user && (
         <li>
           <NavLink className="mr-3" to="/add-craft-item">
-            Add Craft Item
+            Add Craft 
           </NavLink>
         </li>
       )}
