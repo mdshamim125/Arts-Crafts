@@ -4,8 +4,9 @@ import { ScaleLoader } from "react-spinners";
 import useAuth from "../../hooks/Hooks";
 
 const ArtsAndCrafts = () => {
-  const{loading}=useAuth()
+  const { loading } = useAuth();
   const [craftItems, setCraftItems] = useState([]);
+  // const [artItems, setArtItems] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/craft")
@@ -17,6 +18,17 @@ const ArtsAndCrafts = () => {
         console.error("Error fetching craft items:", error);
       });
   }, []);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/art")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setArtItems(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching craft items:", error);
+  //     });
+  // }, []);
 
   if (loading) {
     return (
@@ -76,6 +88,40 @@ const ArtsAndCrafts = () => {
               );
             })}
           </tbody>
+          {/* <tbody>
+            {artItems.map((item) => {
+              console.log(item);
+              return (
+                <tr key={item.id}>
+                  <td>
+                    <div className="flex items-center gap-3">
+                      <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
+                          <img
+                            src={item.image}
+                            alt="Avatar Tailwind CSS Component"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <div className="font-bold">{item.item_name}</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>{item.subcategory_Name}</td>
+                  <td>{item.rating}</td>
+                  <td>
+                    <Link
+                      to={`/art/${item._id}`}
+                      className="btn btn-primary btn-xs"
+                    >
+                      Details
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody> */}
         </table>
       </div>
     </div>

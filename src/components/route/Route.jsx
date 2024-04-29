@@ -10,6 +10,7 @@ import AddCraftItem from "../../pages/add-craft/AddCraftItem";
 import CraftItemDetails from "../CraftItemDetails";
 import CraftItemUpdate from "../CraftItemUpdate/CraftItemUpdate";
 import PrivateRoute from "../private-route/PrivateRoute";
+import ArtItemDetails from "../view-details/ArtItemDetails";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <CraftItemDetails></CraftItemDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/art/:id",
+        element: (
+          <PrivateRoute>
+            <ArtItemDetails></ArtItemDetails>
           </PrivateRoute>
         ),
       },
