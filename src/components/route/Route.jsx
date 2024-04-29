@@ -9,6 +9,7 @@ import MyArtCraft from "../../pages/MyArt-Craft/MyArtCraft";
 import AddCraftItem from "../../pages/add-craft/AddCraftItem";
 import CraftItemDetails from "../CraftItemDetails";
 import CraftItemUpdate from "../CraftItemUpdate/CraftItemUpdate";
+import PrivateRoute from "../private-route/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -34,7 +35,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/craft/:id",
-        element: <CraftItemDetails></CraftItemDetails>,
+        element: (
+          <PrivateRoute>
+            <CraftItemDetails></CraftItemDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/my-arts-crafts",
@@ -46,7 +51,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        element: <CraftItemUpdate></CraftItemUpdate>
+        element: <CraftItemUpdate></CraftItemUpdate>,
       },
     ],
   },

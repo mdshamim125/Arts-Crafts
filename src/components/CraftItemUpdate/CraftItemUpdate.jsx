@@ -3,9 +3,10 @@ import { useParams } from "react-router-dom";
 
 import useAuth from "../../hooks/Hooks";
 import Swal from "sweetalert2";
+import { ScaleLoader } from "react-spinners";
 
 const CraftItemUpdate = ({ item }) => {
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   const { id } = useParams();
   const [craft, setCraft] = useState();
 
@@ -92,9 +93,7 @@ const CraftItemUpdate = ({ item }) => {
       });
   };
 
-  if (!user || !craft) {
-    return <div>Loading...</div>;
-  }
+
 
   return (
     <div className="bg-[#F4F3F0] p-24">

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { ScaleLoader } from "react-spinners";
+import useAuth from "../../hooks/Hooks";
 
 const ArtsAndCrafts = () => {
+  const{loading}=useAuth()
   const [craftItems, setCraftItems] = useState([]);
 
   useEffect(() => {
@@ -14,6 +17,17 @@ const ArtsAndCrafts = () => {
         console.error("Error fetching craft items:", error);
       });
   }, []);
+
+  if (loading) {
+    return (
+      <ScaleLoader
+        color="#36d7b7"
+        height={100}
+        width={49}
+        className="text-center mt-10"
+      />
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">

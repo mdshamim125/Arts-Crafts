@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/Hooks";
 import Swal from "sweetalert2";
+import { ScaleLoader } from "react-spinners";
 
 const MyCraftItem = () => {
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   const [craftItems, setCraftItems] = useState([]);
   const [filterCustomization, setFilterCustomization] = useState("All");
 
@@ -54,8 +55,15 @@ const MyCraftItem = () => {
     setFilterCustomization(e.target.value);
   };
 
-  if (!user) {
-    return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <ScaleLoader
+        color="#36d7b7"
+        height={100}
+        width={49}
+        className="text-center mt-10"
+      />
+    );
   }
 
   let filteredItems = craftItems;

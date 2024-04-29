@@ -1,9 +1,10 @@
 import React from "react";
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/Hooks";
+import { ScaleLoader } from "react-spinners";
 
 const AddCraftItem = () => {
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   // console.log(user.email, user.displayName);
   const handleAddCraftItem = (event) => {
     event.preventDefault();
@@ -75,8 +76,15 @@ const AddCraftItem = () => {
       });
   };
 
-  if (!user) {
-    return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <ScaleLoader
+        color="#36d7b7"
+        height={100}
+        width={49}
+        className="text-center mt-10"
+      />
+    );
   }
 
   return (
@@ -93,7 +101,8 @@ const AddCraftItem = () => {
                 type="text"
                 name="image"
                 placeholder="Image URL"
-                className="input input-bordered w-full" required
+                className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -108,7 +117,8 @@ const AddCraftItem = () => {
                 type="text"
                 name="itemName"
                 placeholder="Item Name"
-                className="input input-bordered w-full" required
+                className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -121,7 +131,8 @@ const AddCraftItem = () => {
                 type="text"
                 name="subcategoryName"
                 placeholder="Subcategory Name"
-                className="input input-bordered w-full" required
+                className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -135,7 +146,8 @@ const AddCraftItem = () => {
               <textarea
                 name="shortDescription"
                 placeholder="Short Description"
-                className="input input-bordered w-full" required
+                className="input input-bordered w-full"
+                required
                 rows="4"
               ></textarea>
             </label>
@@ -149,7 +161,8 @@ const AddCraftItem = () => {
                 type="number"
                 name="price"
                 placeholder="Price"
-                className="input input-bordered w-full" required
+                className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -164,7 +177,8 @@ const AddCraftItem = () => {
                 type="number"
                 name="rating"
                 placeholder="Rating"
-                className="input input-bordered w-full" required
+                className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -175,7 +189,8 @@ const AddCraftItem = () => {
             <label className="input-group">
               <select
                 name="customization"
-                className="input input-bordered w-full" required
+                className="input input-bordered w-full"
+                required
               >
                 <option value="">Select Customization</option>
                 <option value="Yes">Yes</option>
@@ -194,7 +209,8 @@ const AddCraftItem = () => {
                 type="text"
                 name="processingTime"
                 placeholder="Processing Time"
-                className="input input-bordered w-full" required
+                className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -225,7 +241,8 @@ const AddCraftItem = () => {
                 name="userName"
                 placeholder="User Name"
                 defaultValue={user.displayName}
-                className="input input-bordered w-full" required
+                className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -239,7 +256,8 @@ const AddCraftItem = () => {
                 name="userEmail"
                 placeholder="User Email"
                 defaultValue={user.email}
-                className="input input-bordered w-full" required
+                className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
