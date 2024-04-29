@@ -78,7 +78,7 @@ const Navbar = () => {
             </ul>
           </div>
           <a className="btn text-base md:text-xl lg:text-2xl font-bold flex gap-0">
-            W<span className="text-blue-600">NAME</span>
+            Arts&<span className="text-blue-600">Crafts</span>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">

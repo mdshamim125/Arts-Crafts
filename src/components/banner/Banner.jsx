@@ -35,7 +35,7 @@ const Banner = () => {
           id="slide2"
           className="carousel-item relative min-h-[550px] w-full"
         >
-          <img src="https://i.ibb.co/g470pdQ/pexels-olly-3771079.jpg" />
+          <img src="https://i.ibb.co/x1gbJx0/pexels-daniel-ape-795693.jpg" />
           <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
             <div className="text-white text-center">
               <h2 className="text-4xl font-bold">
@@ -62,7 +62,7 @@ const Banner = () => {
           className="carousel-item relative min-h-[550px] w-full"
         >
           <img
-            src="https://i.ibb.co/g470pdQ/pexels-olly-3771079.jpg"
+            src="https://i.ibb.co/3vk1hKT/pexels-hamad-bajwa-249513-755858.jpg"
             className="w-full"
           />
           <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
@@ -71,7 +71,7 @@ const Banner = () => {
                 Best <span className="text-green-600">Arts & Crafts</span> for
                 you
               </h2>
-              <p className="text-lg">
+              <p className="text-lg text-white font-bold">
                 Discover our exquisite collection of arts and crafts. Choose
                 from a variety of stunning pieces crafted by skilled artisans.
               </p>
