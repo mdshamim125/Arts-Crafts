@@ -93,7 +93,16 @@ const CraftItemUpdate = ({ item }) => {
       });
   };
 
-
+  if (loading) {
+    return (
+      <ScaleLoader
+        color="#36d7b7"
+        height={100}
+        width={49}
+        className="text-center mt-10"
+      />
+    );
+  }
 
   return (
     <div className="bg-[#F4F3F0] p-24">
