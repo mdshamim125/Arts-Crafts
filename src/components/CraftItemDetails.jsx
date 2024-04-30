@@ -7,7 +7,7 @@ const CraftItemDetails = () => {
   const [craftItem, setCraftItem] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/craft/${id}`)
+    fetch(`https://art-craft-server-zeta.vercel.app/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCraftItem(data);
@@ -18,7 +18,7 @@ const CraftItemDetails = () => {
   }, [id]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/craft/${id}`)
+    fetch(`https://art-craft-server-zeta.vercel.app/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCraftItem(data);

@@ -9,7 +9,7 @@ const ArtsAndCrafts = () => {
   // const [artItems, setArtItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/craft")
+    fetch("https://art-craft-server-zeta.vercel.app/craft")
       .then((res) => res.json())
       .then((data) => {
         setCraftItems(data);
@@ -19,18 +19,9 @@ const ArtsAndCrafts = () => {
       });
   }, []);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/art")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setArtItems(data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching craft items:", error);
-  //     });
-  // }, []);
-
-  if (loading) {
+  // console.log(craftItems);
+  
+ if (loading) {
     return (
       <ScaleLoader
         color="#36d7b7"

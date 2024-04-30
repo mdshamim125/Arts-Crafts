@@ -5,7 +5,7 @@ const Arts = () => {
   const [craftItems, setCraftItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/art")
+    fetch("https://art-craft-server-zeta.vercel.app/art")
       .then((res) => res.json())
       .then((data) => {
         setCraftItems(data);
@@ -41,10 +41,7 @@ const Arts = () => {
                 <p className="text-gray-500">rating: {item.rating}</p>
               </div>
               <div>
-                <Link
-                  to={`/art/${item._id}`}
-                  className="btn btn-primary mt-6"
-                >
+                <Link to={`/art/${item._id}`} className="btn btn-primary mt-6">
                   View Details
                 </Link>
               </div>

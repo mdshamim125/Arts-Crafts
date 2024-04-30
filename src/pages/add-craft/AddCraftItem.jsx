@@ -39,7 +39,7 @@ const AddCraftItem = () => {
 
     console.log(newItem);
 
-    fetch("http://localhost:5000/craft", {
+    fetch("https://art-craft-server-zeta.vercel.app/craft", {
       method: "POST",
       headers: {
         "content-type": "application/json",

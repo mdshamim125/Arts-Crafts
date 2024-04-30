@@ -5,7 +5,7 @@ import useAuth from "../../hooks/Hooks";
 import Swal from "sweetalert2";
 import { ScaleLoader } from "react-spinners";
 
-const CraftItemUpdate = ({ item }) => {
+const CraftItemUpdate = () => {
   const { user, loading } = useAuth();
   const { id } = useParams();
   const [craft, setCraft] = useState();
@@ -13,7 +13,7 @@ const CraftItemUpdate = ({ item }) => {
   useEffect(() => {
     if (!user) return;
 
-    fetch(`http://localhost:5000/craft/${id}`)
+    fetch(`https://art-craft-server-zeta.vercel.app/craft/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -24,10 +24,12 @@ const CraftItemUpdate = ({ item }) => {
       });
   }, [user, id]);
 
+  console.log(craft);
+
   useEffect(() => {
     if (!user) return;
 
-    fetch(`http://localhost:5000/myCraft/${id}`)
+    fetch(`https://art-craft-server-zeta.vercel.app/myCraft/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -56,7 +58,7 @@ const CraftItemUpdate = ({ item }) => {
 
     console.log(updatedItem);
 
-    fetch(`http://localhost:5000/myCraft/${id}`, {
+    fetch(`https://art-craft-server-zeta.vercel.app/myCraft/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -119,7 +121,7 @@ const CraftItemUpdate = ({ item }) => {
                 name="image"
                 placeholder="Image URL"
                 className="input input-bordered w-full"
-                defaultValue={craft.image}
+                defaultValue={""}
                 required
               />
             </label>
