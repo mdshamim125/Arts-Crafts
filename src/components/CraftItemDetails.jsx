@@ -3,22 +3,11 @@ import { useParams } from "react-router-dom";
 import { ScaleLoader } from "react-spinners";
 
 const CraftItemDetails = () => {
-  const { id } = useParams(); // Get the item ID from the URL params
+  const { id } = useParams();
   const [craftItem, setCraftItem] = useState(null);
 
   useEffect(() => {
-    fetch(`https://art-craft-server-zeta.vercel.app/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCraftItem(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching craft item details:", error);
-      });
-  }, [id]);
-
-  useEffect(() => {
-    fetch(`https://art-craft-server-zeta.vercel.app/${id}`)
+    fetch(`https://art-craft-server-zeta.vercel.app/craft/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCraftItem(data);

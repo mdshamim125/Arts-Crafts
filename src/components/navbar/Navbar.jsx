@@ -19,20 +19,20 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink className="mr-3" to="/arts-crafts">
-        All Art & craft Items
+          All Art & craft Items
         </NavLink>
       </li>
       {user && (
         <li>
           <NavLink className="mr-3" to="/my-arts-crafts">
-          My Art & Craft List
+            My Art & Craft List
           </NavLink>
         </li>
       )}
       {user && (
         <li>
           <NavLink className="mr-3" to="/add-craft-item">
-          Add Craft Item
+            Add Craft Item
           </NavLink>
         </li>
       )}

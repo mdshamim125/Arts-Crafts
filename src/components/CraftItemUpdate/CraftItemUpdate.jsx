@@ -8,7 +8,17 @@ import { ScaleLoader } from "react-spinners";
 const CraftItemUpdate = () => {
   const { user, loading } = useAuth();
   const { id } = useParams();
-  const [craft, setCraft] = useState();
+
+  const [craft, setCraft] = useState({
+    itemName: "",
+    subcategoryName: "",
+    shortDescription: "",
+    price: "",
+    rating: "",
+    customization: "",
+    processingTime: "",
+    stockStatus: "",
+  });
 
   useEffect(() => {
     if (!user) return;
@@ -25,19 +35,6 @@ const CraftItemUpdate = () => {
   }, [user, id]);
 
   console.log(craft);
-
-  useEffect(() => {
-    if (!user) return;
-
-    fetch(`https://art-craft-server-zeta.vercel.app/myCraft/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching craft item:", error);
-      });
-  }, [user, id]);
 
   const handleUpdateCraftItem = (event) => {
     event.preventDefault();
@@ -121,7 +118,7 @@ const CraftItemUpdate = () => {
                 name="image"
                 placeholder="Image URL"
                 className="input input-bordered w-full"
-                defaultValue={""}
+                defaultValue={craft.image}
                 required
               />
             </label>

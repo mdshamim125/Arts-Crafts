@@ -7,7 +7,7 @@ const ArtItemDetails = () => {
   const [artItem, setArtItem] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/art/${id}`)
+    fetch(`https://art-craft-server-zeta.vercel.app/art/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setArtItem(data);
@@ -17,18 +17,8 @@ const ArtItemDetails = () => {
       });
   }, [id]);
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/art/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setArtItem(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching art item details:", error);
-      });
-  }, [id]);
-
-  console.log(artItem);
+  
+  // console.log(artItem);
 
   if (!artItem) {
     return (
