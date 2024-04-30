@@ -1,8 +1,23 @@
-# React + Vite
+# Arts&Crafts
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Arts&Crafts! 
 
-Currently, two official plugins are available:
+## Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Visit Arts&Crafts](https://add-and-craft.web.app)
+
+## Features and Characteristics
+
+- **Comprehensive  mongoDB Database**: Vist Our  Arts&Crafts .
+  
+- **Added Collection of Crafts Items**: Different categories crafts are added in our Arts&Crafts.
+  
+- **Details of All Categories**: All the feactures and facilities are shown in our details section.
+  
+- **User-Friendly Interface**: It is the most attractive thing in this website.You can register, login our HomeSell and also you can added your crafts categories if you are logged-in.
+  
+- **Responsive Design**: Access Arts&Crafts from any device, whether it's your desktop, tablet, or smartphone.
+
+
+
+
