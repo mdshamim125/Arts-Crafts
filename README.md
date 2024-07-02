@@ -1,6 +1,6 @@
 # Arts&Crafts
 
-Welcome to Arts&Crafts! 
+Welcome to Arts&Crafts! This MongoDB-powered platform offers a diverse collection of crafts items categorized for easy exploration. With a user-friendly interface, users can register, log in, and manage their crafts categories conveniently. Arts&Crafts ensures a responsive design, allowing seamless access from desktops, tablets, and smartphones. Dive into detailed categories with comprehensive features and facilities, making Arts&Crafts the ideal destination for crafts enthusiasts to discover and showcase their creations.
 
 ## Live Site
 
